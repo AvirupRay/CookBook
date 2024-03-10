@@ -28,7 +28,7 @@ function Foodlist() {
       else text += ", " + foods[i];
     }
 
-    text += " give me 4 recipie list seperated by @";
+    text += " give me 4 recipie list in details  seperated by @";
     const data = { text: text };
     axios.post("http://localhost:3000/api/Rec", data).then((res) => {
       console.log(res.data);
