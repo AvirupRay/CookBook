@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import frntVid from "/video (2160p).gif";
+// import frntVid from "/video (2160p).gif";
 import { motion } from "framer-motion";
 import { LucideArrowUpRight } from "lucide-react";
 
@@ -53,7 +53,7 @@ function Homepage() {
         >
           <div className=" w-[100vw] h-[100vh] p-3 rounded-[1rem] overflow-hidden  relative">
             <motion.img
-              src={frntVid}
+              // src={frntVid}
               alt=""
               className=" w-full h-full object-cover rounded-[1rem] 2xl:rounded-[2rem]  border-x-8 border-t-8 brightness-75 border-white"
               initial={{ opacity: 0, scale: 1.1 }}
