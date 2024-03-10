@@ -1,16 +1,20 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-// import frntVid from "/video (2160p).gif";
+import frntVid from "/video (2160p).gif";
 import { motion } from "framer-motion";
 import { LucideArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Homepage() {
   const recomendations = {
     prompt: "Make something new today with chicken",
   };
+
+  const navigate = useNavigate();
+
   return (
     <>
-      <motion.div className=" h-[90vh] w-[100vw]    overflow-hidden flex flex-col ">
+      <motion.div className=" h-[90vh] w-[100vw]    overflow-hidden flex flex-col select-none ">
         <motion.div
           className=" h-[60%]  w-full origin-top  flex justify-center items-center"
           initial={{ opacity: 0, height: "unset" }}
@@ -30,9 +34,16 @@ function Homepage() {
                 cravings.
               </div>
               <div className=" text-[3.2vh] px-[1%] py-[1%]  flex justify-center items-center">
-                <div className=" bg-[black] px-[3%] py-[.5%]  rounded-3xl flex items-center font-Karla  ">
+                <motion.div
+                  className=" bg-[black] px-[3%] py-[.5%]  rounded-3xl flex items-center font-Karla cursor-pointer "
+                  onClick={() => {
+                    navigate("/list");
+                  }}
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.1 }}
+                >
                   Get Your Recipe <LucideArrowUpRight size={30} />
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -53,7 +64,7 @@ function Homepage() {
         >
           <div className=" w-[100vw] h-[100vh] p-3 rounded-[1rem] overflow-hidden  relative">
             <motion.img
-              // src={frntVid}
+              src={frntVid}
               alt=""
               className=" w-full h-full object-cover rounded-[1rem] 2xl:rounded-[2rem]  border-x-8 border-t-8 brightness-75 border-white"
               initial={{ opacity: 0, scale: 1.1 }}
@@ -69,7 +80,20 @@ function Homepage() {
               }}
             />
             <div className="bg-gradient-to-t from-[#000000] to-[#000000] w-full h-full "></div>
-            <motion.div className=" absolute top-[8%] right-[5%] w-[20vw] h-[25vh] bg-[#ffffffd2] px-[2%] py-[1.5%] backdrop-blur-lg  rounded-2xl z-10">
+            <motion.div
+              className=" absolute top-[8%] right-[5%] w-[20vw] h-[25vh] bg-[#ffffffd2] px-[2%] py-[1.5%] backdrop-blur-lg  rounded-2xl z-10"
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.5,
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                mass: 0.5,
+                easing: [0.42, 0, 0.58, 1],
+              }}
+            >
               <div className=" h-[65%]  text-[black] font-semibold text-[3.2vh] font-Karla leading-tight">
                 {recomendations.prompt}
               </div>
@@ -79,7 +103,20 @@ function Homepage() {
                 </div>
               </div>
             </motion.div>
-            <motion.div className=" absolute top-[8%] left-[5%] w-[35vw] h-[25vh]   rounded-2xl z-10">
+            <motion.div
+              className=" absolute top-[8%] left-[5%] w-[35vw] h-[25vh]   rounded-2xl z-10"
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.5,
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                mass: 0.5,
+                easing: [0.42, 0, 0.58, 1],
+              }}
+            >
               <motion.div className=" w-full h-full flex flex-col text-[5vh] justify-center items-start px-[3%] font-Karla">
                 <motion.div className=" text-[2.8vh] ml-[1%]  h-[40%] w-full flex items-center">
                   <span className=" px-2  py-1 border  rounded-2xl bg-[#0000002f] backdrop-blur-xl">

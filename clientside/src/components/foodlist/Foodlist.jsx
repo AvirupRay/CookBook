@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Card from "./Card";
 import axios from "axios";
-
+import { motion } from "framer-motion";
 function Foodlist() {
   const [foods, setFoods] = useState([]);
   const [item, setItem] = useState("");
@@ -39,8 +39,30 @@ function Foodlist() {
 
   return (
     <>
-      <div className="flex items-center justify-center flex-col bg-[#2E2D27] rounded-3xl gap-4 overflow-hidden">
-        <div className="bg-[#2E2D27] w-full h-[10vh]  rounded-3xl p-5 flex justify-evenly gap-2 items-center">
+      <motion.div
+        className="flex items-center justify-center flex-col bg-[#2E2D27] rounded-3xl gap-4 overflow-hidden"
+        initial={{ opacity: 0, height: "90%" }}
+        animate={{ opacity: 1, height: "100%" }}
+        transition={{
+          duration: 1,
+          delay: 0.2,
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+      >
+        <motion.div
+          className="bg-[#2E2D27] w-full h-[10vh]  rounded-3xl p-5 flex justify-evenly gap-2 items-center"
+          initial={{ opacity: 0, height: "90%" }}
+          animate={{ opacity: 1, height: "100%" }}
+          transition={{
+            duration: 1,
+            delay: 0.2,
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+          }}
+        >
           {/* Head */}
           <div className="flex justify-center items-center gap-4">
             <input
@@ -85,7 +107,7 @@ function Foodlist() {
               })}
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* food list */}
         <div className={"bg-black w-[100vw] h-[80vh] m-auto rounded-3xl p-5"}>
@@ -96,7 +118,7 @@ function Foodlist() {
             <Card />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
