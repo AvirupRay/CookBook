@@ -8,7 +8,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 router.post("/Rec", async (req, res) => {
   try {
-    const prompt = `I Have ${req.body.food1} and ${req.body.food2} what can I make with it?`;
+    const prompt = req.body.text;
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();

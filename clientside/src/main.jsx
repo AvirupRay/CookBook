@@ -10,6 +10,7 @@ import "./index.css";
 import Homepage from "./components/homepage/Homepage.jsx";
 import Foodlist from "./components/foodlist/Foodlist.jsx";
 import Layout from "./Layout.jsx";
+import Search from "./components/search/Search.jsx";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 const AppRouter = createBrowserRouter([
@@ -24,6 +25,10 @@ const AppRouter = createBrowserRouter([
       {
         path: "/list",
         element: <Foodlist />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
       },
     ],
   },
