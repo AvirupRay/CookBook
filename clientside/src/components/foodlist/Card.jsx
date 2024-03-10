@@ -42,7 +42,12 @@ function Card() {
           >
             <motion.h5>{items.subtitle}</motion.h5>
             <motion.h2>{items.title}</motion.h2>
-            <motion.button onClick={() => setSelectedId(null)} />
+            <motion.button
+              onClick={() => setSelectedId(null)}
+              className="absolute top-4 right-4 h-10 w-10 rounded-full bg-slate-800"
+            >
+              X
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>

@@ -42,7 +42,11 @@ function Foodlist() {
             list ? "h-[10vh]" : "h-[80vh]"
           } m-auto rounded-3xl p-5`}
         >
-          <div className=" flex justify-evenly text-white">
+          <div
+            className={` flex justify-evenly text-white ${
+              list ? "hidden" : "block"
+            }`}
+          >
             <Card />
           </div>
         </div>
