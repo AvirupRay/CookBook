@@ -9,7 +9,7 @@ function Header() {
   const { isAuthenticated } = useAuth0();
   return (
     <>
-      <div className=" bg-[#262622] h-[5vh] w-[95%] m-auto my-2  p-2 rounded-xl flex gap-16 flex-row justify-around items-center">
+      <div className=" bg-[#262622] h-[5vh] w-[95%] m-auto my-2  p-2 rounded-xl flex gap-16 flex-row justify-around items-center font-WorkSans">
         <div className="text-3xl font-display font-semibold">Cook's Book</div>
 
         <div>
