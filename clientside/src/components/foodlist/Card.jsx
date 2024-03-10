@@ -40,9 +40,9 @@ function Card() {
             {food.recipe[0].name}
           </div>
           <div className="  text-[black] font-medium h-[80%] mx-[3%] py-[2%]">
-            {food.recipe[0].ingredients.map((ingredient) => {
+            {food.recipe[0].ingredients.map((ingredient, index) => {
               return (
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between" key={index}>
                   <div className="text-[2.5vh] flex gap-[2%] w-full">
                     <LucideBox size={20} />
                     {ingredient.name} {ingredient.amount} {ingredient.unit}{" "}

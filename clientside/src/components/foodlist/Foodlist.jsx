@@ -69,14 +69,14 @@ function Foodlist() {
           </div>
           {/* body */}
           <div className=" bg-[#F4E896] w-80 h-20 rounded-3xl p-2">
-            <ul className="flex flex-row">
+            <ul className="flex flex-col">
               {foods.map((item, index) => {
                 return (
                   <li key={index} className="text-black font-bold font-mono">
                     {item}
                     <button
                       onClick={() => setFoods(foods.filter((i) => i !== item))}
-                      className="bg-[#000] text-white  text-m rounded-3xl w-6 h-6 mx-2"
+                      className="bg-[#000] text-white  text-sm rounded-3xl w-4 h-4 mx-2"
                     >
                       X
                     </button>
