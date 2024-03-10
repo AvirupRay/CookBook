@@ -14,20 +14,26 @@ function Header() {
 
         <div>
           <ul className="flex flex-row gap-5 text-2xl items-center">
-            <li className="w-40 h-14 bg-[#F4E896] rounded-xl text-black font-bold text-lg text-center">
-              HOME
-            </li>
-            <li className="w-40 bg-[#F4E896] rounded-xl text-black font-bold text-lg text-center">
-              GENERATE
-            </li>
-            <li className="w-40 bg-[#F4E896] rounded-xl text-black font-bold text-lg text-center">
-              ABOUT US
-            </li>
+            <NavLink to="/">
+              <li className="w-40 p-2 bg-[#F4E896] rounded-xl text-black font-bold text-lg text-center">
+                HOME
+              </li>
+            </NavLink>
+            <NavLink to="/list">
+              <li className="w-40 p-2 bg-[#F4E896] rounded-xl text-black font-bold text-lg text-center">
+                GENERATE
+              </li>
+            </NavLink>
+            <NavLink to="/">
+              <li className="w-40 p-2 bg-[#F4E896] rounded-xl text-black font-bold text-lg text-center">
+                ABOUT US
+              </li>
+            </NavLink>
           </ul>
         </div>
-        <div>
-          {isAuthenticated ? <Logout /> : <Login />}
+        <div className="flex flex-row gap-20">
           <Profile />
+          {isAuthenticated ? <Logout /> : <Login />}
         </div>
       </div>
     </>

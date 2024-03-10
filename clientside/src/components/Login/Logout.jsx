@@ -9,6 +9,7 @@ const Logout = () => {
       onClick={() =>
         logout({ logoutParams: { returnTo: window.location.origin } })
       }
+      className="w-20 bg-[#F4E896] rounded-xl text-black font-bold text-lg"
     >
       Log Out
     </button>
