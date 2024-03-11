@@ -32,30 +32,59 @@ function Card() {
       },
     ],
   };
+  const cardvariants = {
+    hidden: { opacity: 0, scale: 0.5, y: -10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        delay: 0.5,
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5,
+      },
+    },
+  };
+  const gridVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  };
   return (
     <>
-      <div className="h-full w-fit grid grid-cols-6 gap-5">
-        <div className="bg-[#F4E896] w-[30vw] h-[35vh] rounded-3xl col-span-2 col-start-1 font-WorkSans">
-          <div className="w-[100%] h-[20%] px-[5%] flex items-center text-[3.2vh] font-semibold text-[black] bg-[#26262244] rounded-b-3xl">
-            {food.recipe[0].name}
-          </div>
-          <div className="  text-[black] font-medium h-[80%] mx-[3%] py-[2%]">
-            {food.recipe[0].ingredients.map((ingredient, index) => {
-              return (
-                <div className="flex items-center justify-between" key={index}>
-                  <div className="text-[2.5vh] flex gap-[2%] w-full">
-                    <LucideBox size={20} />
-                    {ingredient.name} {ingredient.amount} {ingredient.unit}{" "}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="bg-[#262622] w-[60vw] h-[35vh] rounded-3xl col-span-4 col-start-3"></div>
-        <div className="bg-[#262622] w-[60vw] h-[35vh] rounded-3xl  col-span-4 col-start-1"></div>
-        <div className="bg-[#F4E896] w-[30vw] h-[35vh] rounded-3xl col-span-2 col-start-5"></div>
-      </div>
+      <motion.div
+        className="  h-full 2xl:grid 2xl:gap-y-[3vh] 2xl:gap-x-[5vh]  2xl:grid-cols-3 flex gap-[2vh]"
+        initial="hidden"
+        animate="visible"
+        variants={gridVariants}
+      >
+        <motion.div
+          className=" bg-[#ffffffcc] 2xl:col-span-2 xl:flex-1  rounded-[1.5rem]"
+          initial="hidden"
+          animate="visible"
+          variants={cardvariants}
+        ></motion.div>
+        <motion.div
+          className=" bg-[#fff6b9] xl:flex-1 rounded-[1.5rem] "
+          initial="hidden"
+          animate="visible"
+          variants={cardvariants}
+        ></motion.div>
+        <motion.div
+          className=" bg-[#fff6b9] xl:flex-1 rounded-[1.5rem]"
+          initial="hidden"
+          animate="visible"
+          variants={cardvariants}
+        ></motion.div>
+        <motion.div
+          className=" bg-[#ffffffcc] xl:flex-1 2xl:col-span-2  rounded-[1.5rem]"
+          initial="hidden"
+          animate="visible"
+          variants={cardvariants}
+        ></motion.div>
+      </motion.div>
     </>
   );
 }
