@@ -13,7 +13,7 @@ router.post("/Rec", async (req, res) => {
     const response = await result.response;
     const text = response.text();
     console.log(text);
-    return res.json(text);
+    return res.json(JSON.parse(text));
   } catch (error) {
     console.log("ERROR__Gemini Not Working!!", error);
     return res.status(500).json({ message: "Gemini Not Working!!" });

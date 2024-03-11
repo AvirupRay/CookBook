@@ -4,11 +4,14 @@ import Card from "./Card";
 import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
 import { SparklesIcon, Trash2Icon, X } from "lucide-react";
+import data from "../../../foodData.json";
 function Foodlist() {
   const [foods, setFoods] = useState([]);
   const [item, setItem] = useState("");
   const [showIngredients, setShowIngredients] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  console.log(data);
 
   //foods get shown in console for now
   useEffect(() => {
@@ -27,29 +30,29 @@ function Foodlist() {
   function generate(e) {
     e.preventDefault();
     if (foods.length < 1) return;
-    var text = "I have";
-    for (var i = 0; i < foods.length; i++) {
-      if (i == 0) text += " " + foods[i];
-      else text += ", " + foods[i];
-    }
     setLoading(true);
-    text += " give me 4 recipie list in details  seperated by @";
-    const data = { text: text };
-    axios
-      .post("http://localhost:3000/api/Rec", data)
+    var text = "";
+    for (var i = 0; i < foods.length; i++) {
+      text += foods[i] + ",";
+    }
+    /* axios
+      .get(
+        `${import.meta.env.VITE_FOOD_URL}?apiKey=${
+          import.meta.env.VITE_APIKEY
+        }&ingredients=${text}`
+      )
       .then((res) => {
         console.log(res.data);
         // return data gets console logged
         setFoods([]);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data.message);
       })
       .finally(() => {
         setLoading(false);
-      });
+      }); */
   }
-  console.log(loading);
   useEffect(() => {
     foods.length > 0 ? setShowIngredients(true) : setShowIngredients(false);
   }, [foods]);
