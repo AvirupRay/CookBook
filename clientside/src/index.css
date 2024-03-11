@@ -13,3 +13,16 @@ html {
   background-color: #181612;
   color: antiquewhite;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2b2a2a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ccc4b43f;
+}
