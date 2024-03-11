@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, stagger } from "framer-motion";
 import { LucideBox } from "lucide-react";
 
 function Card() {
@@ -50,7 +50,10 @@ function Card() {
   };
   const gridVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.5, delayChildren: 0.5 },
+    },
   };
   return (
     <>
@@ -61,28 +64,20 @@ function Card() {
         variants={gridVariants}
       >
         <motion.div
-          className=" bg-[#ffffffcc] 2xl:col-span-2 xl:flex-1  rounded-[1.5rem]"
-          initial="hidden"
-          animate="visible"
-          variants={cardvariants}
+          className=" bg-[#ffffffcc] 2xl:col-span-2 xl:flex-1  rounded-[1.5rem] drop-shadow-lg"
+          variants={gridVariants}
         ></motion.div>
         <motion.div
-          className=" bg-[#fff6b9] xl:flex-1 rounded-[1.5rem] "
-          initial="hidden"
-          animate="visible"
-          variants={cardvariants}
+          className=" bg-[#fff6b9] xl:flex-1 rounded-[1.5rem]  drop-shadow-lg"
+          variants={gridVariants}
         ></motion.div>
         <motion.div
-          className=" bg-[#fff6b9] xl:flex-1 rounded-[1.5rem]"
-          initial="hidden"
-          animate="visible"
-          variants={cardvariants}
+          className=" bg-[#fff6b9] xl:flex-1 rounded-[1.5rem] drop-shadow-lg"
+          variants={gridVariants}
         ></motion.div>
         <motion.div
-          className=" bg-[#ffffffcc] xl:flex-1 2xl:col-span-2  rounded-[1.5rem]"
-          initial="hidden"
-          animate="visible"
-          variants={cardvariants}
+          className=" bg-[#ffffffcc] xl:flex-1 2xl:col-span-2  rounded-[1.5rem] drop-shadow-lg"
+          variants={gridVariants}
         ></motion.div>
       </motion.div>
     </>
