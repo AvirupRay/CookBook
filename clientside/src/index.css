@@ -26,3 +26,7 @@ html {
 ::-webkit-scrollbar-track {
   background-color: #ccc4b43f;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

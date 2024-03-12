@@ -26,9 +26,9 @@ const Profile = () => {
         <img
           src={user.picture}
           alt={user.name}
-          className="w-[17%] aspect-square rounded-[1rem] "
+          className="w-[17%] aspect-square rounded-full ml-4 "
         />
-        <div className=" bg-[black] rounded w-[50%] px-[.3vw] h-full font-Karla text-[2.5vh] 2xl:text-[2vh] whitespace-nowrap">
+        <div className=" bg-[black] rounded w-auto px-[.8vw] h-full font-Karla text-[2.5vh] 2xl:text-[2vh] whitespace-nowrap">
           {" "}
           {user.name}
         </div>
